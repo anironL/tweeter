@@ -4,9 +4,14 @@ nav {
   background: #4056A1;
   color: #FFFFFF;
   height: 120px;
-
+  padding: 1.5em;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-between;
 }
 
 nav > span {
+  font-size: 36px;
   font-family: 'Bungee', cursive;  
+  align-items: flex-end;
 }
