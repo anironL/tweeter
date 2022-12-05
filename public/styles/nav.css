@@ -1,0 +1,12 @@
+/* Nav bar CSS */
+
+nav {
+  background: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+
+}
+
+nav > span {
+  font-family: 'Bungee', cursive;  
+}
