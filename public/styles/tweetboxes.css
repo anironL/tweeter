@@ -2,6 +2,41 @@
 article {
   color: black;
   margin-top: 2em;
+  margin-bottom: 2em;
   padding: 1em;
-  border: 1px solid black;
+  padding-bottom: 2em;
+  border: 2px solid black;
 }
+
+article:hover {
+  box-shadow: 5px 10px #4056A1;
+}
+
+article name {
+  margin-bottom: 5em;
+}
+
+article handle {
+  float: right;
+  color: #4056A1;
+  opacity: 0.75;
+}
+
+article date {
+  float: left;
+}
+
+article i {
+  float: right;
+}
+
+article i:hover {
+  color: orange;
+}
+
+hr {
+  border: 2px solid black;
+  width: 100%;
+}
+
+
