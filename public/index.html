@@ -30,7 +30,7 @@
   <body>
   <!-- Top nav bar (fixed) -->
     <nav>
-      <a><b>Write</b> a new tweet</a>
+      <a><strong>Write</strong> a new tweet</a>
       <span>tweeter</span>
       <div class="break"></div>
       <i class="fa-solid fa-angles-down"></i>
@@ -51,7 +51,6 @@
   <main class="container">
   
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets">
 <!-- <label for="tweet-text">What are you humming about?</label> -->
         
@@ -61,12 +60,20 @@
         <div>
           <button type="submit">Tweet</button>
 
-
-          <output name="counter" class="counter" for="tweet-text"><span id="char-count">140</span></output>
+          <output name="counter" class="counter" for="tweet-text"><span id="char-count"> 140</span></output>
+          <output name="counter" class="counter error" for="tweet-text">Character limit exceeded: </output>
         </div>
       </form>
     </section>
   
+    <section class="tweetboxes">
+
+
+
+
+
+      
+    </section>
 
     <h1>Hello Tweeter</h1>
     <p>Test P1</p>
@@ -85,9 +92,14 @@
       <li>New-tweets.css (ok)</li> 
       <li>Add style elements to new-tweets.css (ok)</li> 
       <li> === End of Day 1 === </li> 
-      <li>Notes: Ask a mentor ( ? ) about the box-resize/inheritance - needed to do inline resize:none to remove.</li>
-      <li>Can't change the color of the awesome fonts icon; background can be changed - is it set?</li> 
+      <li><strong>Note: Ask a mentor ( ? ) about the box-resize/inheritance - needed to do inline resize:none to remove.</strong></li>
+      <li>Can't change the color of the awesome fonts icon; background can be changed - is it set? (it is set)</li> 
       <li> === Start of Day 2 === </li> 
+      <li>Implement char-counter js (ok)</li> 
+      <li>Count down from max-length (ok)</li> 
+      <li>Add/remove error message, change color of text when over max length (ok)</li> 
+      <li><strong>Note: inline set maxlength of textbox = 141</strong></li> 
+      <li>A</li> 
       <li>A</li> 
       <li>A</li> 
       <li>A</li> 

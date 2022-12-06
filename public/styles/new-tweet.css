@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  color: green;
+  color: black;
 }
 
 .new-tweet button {
@@ -12,10 +12,15 @@
 }
 
 .counter {
-  color: red;
   align-items: flex-end;
   align-content: flex-end;
   float: right; 
+}
+
+.error {
+  color: red;
+  display: none;
+  margin-right: 1em;
 }
 
 .textarea {
