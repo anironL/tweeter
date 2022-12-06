@@ -1,40 +1,19 @@
 //Test JS
 $(document).ready(function() {
-  console.log("composer-char-counter loaded")
+  console.log("composer-char-counter loaded");
 
 
-  $("#tweet-text").on('change keyup paste', function() {
+/*  $("#tweet-text").on('change keyup paste', function() { 
     const val = $("#tweet-text").val();
-    console.log("Textbox ___", val);
+    const maxLength = 20;
+    
+    console.log("remaining characters:", maxLength - val.length)
+  }); */
+
+  $("#tweet-text").on('change keyup', function() {
+     console.log($(this).val().length);
+     $("#char-count").text(140 - $(this).val().length)
+     
+     let x = $(this).val().length;
   });
-
 });
-
-
-
-
-/* psuedo-code on eventchange
-KeyboardEvent.change { //for the <textarea>
-  counter = 140 - value of characters?
-}
-*/
-//const addEventListener = document.querySelector('#tweet-text')
-
-/*
-tweet-text.addEventListener('change', (updateValue) => {
-const charLimit = 140;
-let textInput = textContent.length;
-
-console.log(textInput)
-return charLimit-textInput
-});
-*/
-
-//e is textarea 
-function updateValue(e) {
-  textContent = e.target.value;
-  console.log(textContent)
-  return textContent;
-}
-
-onchange = (event) => { };
