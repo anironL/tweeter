@@ -11,6 +11,10 @@
   font-family: 'Bungee', cursive;
 }
 
+.new-tweet button:hover {
+  color: orange;
+}
+
 .counter {
   align-items: flex-end;
   align-content: flex-end;
