@@ -48,13 +48,13 @@
   
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
   
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form>
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+      <form method="POST" action="/tweets">
+<!-- <label for="tweet-text">What are you humming about?</label> -->
+        <textarea name="text" style="resize: none; width: 100%" placeholder="What are you humming about?" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
@@ -74,11 +74,11 @@
       <li>Fix position of nav bar when scrolling (ok)</li>
       <li>Fix header (picture) position (ok)</li> 
       <li>Header background import (ok)</li> 
-      <li>Main element styling</li> 
+      <li>Main element styling (ok)</li> 
       <li>Add tweet submission form (ok)</li> 
-      <li>Change tweet submission form to direct to /tweets instead of /:text</li> 
+      <li>Change tweet submission form to direct to /tweets instead of /:text (ok)</li> 
       <li>New-tweets.css (ok)</li> 
-      <li>Add style elements to new-tweets.css</li> 
+      <li>Add style elements to new-tweets.css (ok)</li> 
       <li> === End of Day 1 === </li> 
       <li>A</li> 
       <li>A</li> 
@@ -88,5 +88,6 @@
       <li>A</li> 
       <li>A</li> 
       <li>A</li> 
+    </main>
   </body>
 </html>
