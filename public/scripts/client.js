@@ -40,8 +40,13 @@ $(document).ready(function() {
     event.preventDefault();
     const data = ($('#tweet-text').serialize());
     // console.log("default behavior disabled");
-    $.post("/tweets", data) 
-      .then (() => { console.log ("AJAX post success")})
+    if (data.length > 140) {
+      alert("Message too long!");
+    } else if (data === "text=" || data === null) {
+      alert("No message here!");
+    } else {
+      $.post("/tweets", data)
+        .then (() => { console.log ("AJAX post success")});
+    }
   });
-
 });
