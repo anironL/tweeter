@@ -25,7 +25,7 @@ const tweetData = [
     "created_at": 1461113959088
   }
 ]
-//creates elements from keys for the argument tweet from tweetData
+//Creates elements from keys for the argument tweet from tweetData
 const createTweetElement = function(tweet) {
   let $tweet = $(`<article>
   <img src="${[tweet.user.avatars]}" class="avatar">
@@ -39,19 +39,19 @@ const createTweetElement = function(tweet) {
   </article>`)
   return $tweet;
 }
-//loops through tweets then appends the returned value to <section class="tweetboxes"> in html.
+//Loops through tweets then prepends the returned value to <section class="tweetboxes"> in html.
 const renderTweets = function(tweets) {
-  console.log(tweets.length)
   for (let x = 0; x < tweets.length; x++) {
     let $tweet = createTweetElement(tweets[x]);
     $('.tweetboxes').prepend($tweet)
   }
 }
 
+//Script
 $(document).ready(function() {
   renderTweets(tweetData);
 
-  $('#form').submit((event) => {
+  $('#tweet-form').submit(function (event) {
     event.preventDefault();
     console.log("default behavior disabled");
   });
