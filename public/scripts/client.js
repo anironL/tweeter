@@ -53,6 +53,9 @@ $(document).ready(function() {
 
   $('#tweet-form').submit(function (event) {
     event.preventDefault();
-    console.log("default behavior disabled");
+    const data = ($('#tweet-text').serialize());
+    // console.log("default behavior disabled");
+    $.post("/tweets", data) 
+      .then (() => { console.log ("success")})
   });
 });
