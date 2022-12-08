@@ -1,31 +1,21 @@
-@media only screen and (min-width: 768px) {
-    header {
-      color: #FFFFFF;
-      padding-top: 150px;
-      margin: auto;
-      margin-top: 15%;
-      width: 35%;
-      height: 450px;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      position: static;
-      justify-content: flex-end;
-      background-color: rgb(255, 165, 0);
-      background-image: url("https://www.transparenttextures.com/patterns/black-linen.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  }
+header {
+  color: #FFFFFF;
+  padding-top: 150px;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: rgb(255, 165, 0);
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-@media only screen and (max-width: 768px) {
-    header {
-      color: #FFFFFF;
-      padding-top: 150px;
-      width: 100%;
-      height: 520px;
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      background-color: rgb(255, 165, 0);
-      background-image: url("https://www.transparenttextures.com/patterns/black-linen.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+@media only screen and (min-width: 768px) {
+  header {
+    margin: auto;
+    margin-top: 15%;
+    width: 35%;
+    height: 450px;
+    justify-content: flex-end;
   }
 }

@@ -41,12 +41,12 @@ const escape = function (str) {
 //SCRIPTS
 $(document).ready(function() {
   loadTweets();
-
+  //run tweet render script when tweet-form is submitted
   $('#tweet-form').submit(function (event) {
     event.preventDefault();
     const data = $('#tweet-text').serialize();
     const tweetText = $('#tweet-text').val();
-
+    //error-messages; unhide when relevant
     if (tweetText.length > 140) {
       $("#error-count").text("Error: Message too long. Please keep messages under 140 characters.");
       $(".error-messages").slideDown();
