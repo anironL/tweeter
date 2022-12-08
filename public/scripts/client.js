@@ -11,7 +11,7 @@ const createTweetElement = function(tweet) {
   <name>${[tweet[user].name]}</name>
   <handle>${[tweet[user].handle]}</handle>
   <br></br>
-  <a class="tweet-content-text">${escape([tweet.content.text])}</a> 
+  <div class="tweet-content-text">${escape([tweet.content.text])}</div> 
   <hr></hr>         
   <date>${timeago.format([tweet.created_at])}</date>
   <i class="fa-solid fa-heart"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-flag"></i>
@@ -45,19 +45,20 @@ $(document).ready(function() {
   $('#tweet-form').submit(function (event) {
     event.preventDefault();
     const data = $('#tweet-text').serialize();
+    const tweetText = $('#tweet-text').val();
 
-    if (data.length > 140) {
+    if (tweetText.length > 140) {
       $("#error-count").text("Error: Message too long. Please keep messages under 140 characters.");
       $(".error-messages").slideDown();
       $(".error-messages").show();
-    } else if (data === "text=" || data === null) {
+    } else if (!tweetText) {
       $("#error-count").text("Error: No message. Please enter a message.");
       $(".error-messages").slideDown();
       $(".error-messages").show();
     } else {
-      $.post("/tweets", data)
-        .then (() => { console.log ("AJAX post success")});
-          loadTweets();
+      $.post("/tweets", data, () => {
+        loadTweets();
+      });
     }
   });
 });
