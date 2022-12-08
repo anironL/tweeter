@@ -1,7 +1,7 @@
 /* Nav bar CSS */
 nav {
   background: #4056A1;
-  color: orange; 
+  color: #ffa500; 
   height: 120px;
   width: 100%;
   padding: 1.5em;
@@ -29,7 +29,7 @@ nav > a {
 }
 
 .fa-solid fa-angles-down {
-  color: orange; 
+  color: rgb(255, 165, 0); 
   flex-flow: row-reverse;
   flex-grow: 1;
 }
