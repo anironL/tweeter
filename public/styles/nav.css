@@ -28,8 +28,8 @@ nav > a {
   height: 0;
 }
 
-.fa-solid fa-angles-down {
-  color: rgb(255, 165, 0); 
-  flex-flow: row-reverse;
-  flex-grow: 1;
+button {
+  background: transparent;
+  border: none;
+  color: rgb(255, 165, 0);
 }
