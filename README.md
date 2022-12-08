@@ -8,13 +8,13 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 Default View:
-!["Tablet & Desktop View"](x)
+!["Tablet & Desktop View"](https://github.com/anironL/tweeter/blob/master/docs/localhost_8080_%20Tweeter_Homepage_Mobile.png)
 
 Mobile View under 768px width:
-!["Mobile View"](x)
+!["Mobile View"](https://github.com/anironL/tweeter/blob/master/docs/localhost_8080_%20Tweeter_Homepage_Mobile.png)
 
 Post Tweets:
-!["Sample Tweet"](x)
+!["Sample Tweet"](https://github.com/anironL/tweeter/blob/master/docs/localhost_8080_%20Tweeter_Sample_Messages.png)
 
 ## Dependencies
 
