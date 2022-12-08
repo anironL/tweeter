@@ -14,6 +14,7 @@ $(document).ready(function() {
       $(this).parent().find("div").find(".counter").css('color', "red");
     } else {
       $(".error").hide();
+      $(".error-messages").hide();
       $(this).parent().find("div").find(".counter").css('color', "black");
     }
   });

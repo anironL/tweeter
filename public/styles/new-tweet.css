@@ -27,6 +27,16 @@
   margin-right: 1em;
 }
 
+.error-messages {
+  flex: none;
+  display: none;
+  color: red;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 1.5em;
+  border: 3px solid red;
+}
+
 .textarea {
   flex: none;
   height: 150px;

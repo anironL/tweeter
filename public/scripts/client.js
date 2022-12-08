@@ -10,7 +10,7 @@ const createTweetElement = function(tweet) {
   <name>${[tweet[user].name]}</name>
   <handle>${[tweet[user].handle]}</handle>
   <br></br>
-  <a class="tweet-content-text">${[tweet.content.text]}</a> 
+  <a class="tweet-content-text">${escape([tweet.content.text])}</a> 
   <hr></hr>         
   <date>${timeago.format([tweet.created_at])}</date>
   <i class="fa-solid fa-heart"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-flag"></i>
@@ -19,18 +19,24 @@ const createTweetElement = function(tweet) {
 };
 //Loop through tweets then prepend the returned value to <section class="tweetboxes"> in html.
 const renderTweets = function(tweets) {
-  console.log("Tweets to render:", tweets)
+  // console.log("Tweets to render:", tweets)
   for (let x = 0; x < tweets.length; x++) {
     let $tweet = createTweetElement(tweets[x]);
     $('.tweetboxes').prepend($tweet)
   }
 };
-//Get tweets database objects from /tweets
+//Get tweets database objects from /tweets.
 const loadTweets = function() {
   let tweetsGot = $.get("http://localhost:8080/tweets", function (data) { 
      renderTweets(data);
   })
 }
+//Escape function for XSS vulnerability, use in createTweetElement.
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 //Script
 $(document).ready(function() {
@@ -38,15 +44,21 @@ $(document).ready(function() {
 
   $('#tweet-form').submit(function (event) {
     event.preventDefault();
-    const data = ($('#tweet-text').serialize());
+    const data = $('#tweet-text').serialize();
+    console.log(data)
     // console.log("default behavior disabled");
     if (data.length > 140) {
-      alert("Message too long!");
+      $("#error-count").text("Error: Message too long. Please keep messages under 140 characters.");
+      $(".error-messages").slideDown();
+      $(".error-messages").show();
     } else if (data === "text=" || data === null) {
-      alert("No message here!");
+      $("#error-count").text("Error: No message. Please enter a message.");
+      $(".error-messages").slideDown();
+      $(".error-messages").show();
     } else {
       $.post("/tweets", data)
         .then (() => { console.log ("AJAX post success")});
+          loadTweets();
     }
   });
 });
