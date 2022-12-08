@@ -2,6 +2,7 @@
 //  * jQuery is already loaded
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 
+//FUNCTIONS
 //Create elements from keys for the argument tweet object
 const createTweetElement = function(tweet) {
   let user = Object.keys(tweet)[0];
@@ -19,7 +20,6 @@ const createTweetElement = function(tweet) {
 };
 //Loop through tweets then prepend the returned value to <section class="tweetboxes"> in html.
 const renderTweets = function(tweets) {
-  // console.log("Tweets to render:", tweets)
   for (let x = 0; x < tweets.length; x++) {
     let $tweet = createTweetElement(tweets[x]);
     $('.tweetboxes').prepend($tweet)
@@ -38,15 +38,14 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-//Script
+//SCRIPTS
 $(document).ready(function() {
   loadTweets();
 
   $('#tweet-form').submit(function (event) {
     event.preventDefault();
     const data = $('#tweet-text').serialize();
-    console.log(data)
-    // console.log("default behavior disabled");
+
     if (data.length > 140) {
       $("#error-count").text("Error: Message too long. Please keep messages under 140 characters.");
       $(".error-messages").slideDown();

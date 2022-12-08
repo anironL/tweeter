@@ -7,10 +7,9 @@ $(document).ready(function() {
     let x = $(this).val().length;
 
     $("#char-count").text(140 - x)
-     
+
     if (x > maxLength) {
       $(".error").show();
-//    $(".counter").css('color', "red")
       $(this).parent().find("div").find(".counter").css('color', "red");
     } else {
       $(".error").hide();
