@@ -56,6 +56,7 @@ $(document).ready(function() {
       $(".error-messages").slideDown();
       $(".error-messages").show();
     } else {
+      $(".tweetboxes").empty();
       $.post("/tweets", data, () => {
         loadTweets();
       });
